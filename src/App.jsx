@@ -1,3 +1,89 @@
+// import React from "react";
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+// // All Pages
+// import NavBer from "./NavBer/Navber";
+// import LandingPage from "./Pages/LandingPage/LandingPage";
+// import AboutMe from "./Pages/AboutMe/AboutMe";
+// // import Projects from "./Pages/Projects/Projects";
+// import Services from "./Pages/ServicesPage/Services";
+// import Contact from "./Pages/Contact/Contact";
+
+// // All Pages
+
+// function App() {
+//   const router = createBrowserRouter([
+//     {
+//       path: "/",
+//       element: (
+//         <>
+//           <NavBer />
+//           <LandingPage />
+//         </>
+//       ),
+//     },
+//     {
+//       path: "/AboutMe",
+//       element: (
+//         <>
+//           <NavBer />
+//           <AboutMe />
+//         </>
+//       ),
+//     },
+//     // {
+//     //   path: "/Projects",
+//     //   element: (
+//     //     <>
+//     //       <NavBer />
+//     //       <Projects />
+//     //     </>
+//     //   ),
+//     // },
+//     {
+//       path: "/Services",
+//       element: (
+//         <>
+//           <NavBer />
+//           <Services />
+//         </>
+//       ),
+//     },
+
+//     {
+//       path: "/Contact",
+//       element: (
+//         <>
+//           <NavBer />
+//           <Contact />
+//         </>
+//       ),
+//     },
+//   ]);
+
+//   return (
+//     <div>
+//       {/* <NavBer /> */}
+//       <RouterProvider router={router} />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// TRING TO REMOVING ALL THE  ERRORS FROM chatGPT
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -5,65 +91,60 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NavBer from "./NavBer/Navber";
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import AboutMe from "./Pages/AboutMe/AboutMe";
-// import Projects from "./Pages/Projects/Projects";
 import Services from "./Pages/ServicesPage/Services";
 import Contact from "./Pages/Contact/Contact";
 
 // All Pages
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <>
-          <NavBer />
-          <LandingPage />
-        </>
-      ),
-    },
-    {
-      path: "/AboutMe",
-      element: (
-        <>
-          <NavBer />
-          <AboutMe />
-        </>
-      ),
-    },
-    // {
-    //   path: "/Projects",
-    //   element: (
-    //     <>
-    //       <NavBer />
-    //       <Projects />
-    //     </>
-    //   ),
-    // },
-    {
-      path: "/Services",
-      element: (
-        <>
-          <NavBer />
-          <Services />
-        </>
-      ),
-    },
-
-    {
-      path: "/Contact",
-      element: (
-        <>
-          <NavBer />
-          <Contact />
-        </>
-      ),
-    },
-  ]);
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: (
+          <>
+            <NavBer />
+            <LandingPage />
+          </>
+        ),
+      },
+      {
+        path: "/aboutme",
+        element: (
+          <>
+            <NavBer />
+            <AboutMe />
+          </>
+        ),
+      },
+      {
+        path: "/services",
+        element: (
+          <>
+            <NavBer />
+            <Services />
+          </>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+          <>
+            <NavBer />
+            <Contact />
+          </>
+        ),
+      },
+      {
+        path: "*", // This will catch all other routes
+        element: <div>404 - Page Not Found</div>,
+      },
+    ],
+    { basename: "/golamrabbani-react-portfolio" }
+  );
 
   return (
     <div>
-      {/* <NavBer /> */}
       <RouterProvider router={router} />
     </div>
   );

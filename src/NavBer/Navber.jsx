@@ -53,19 +53,6 @@ function Navber() {
           {/*  */}
           {/*  */}
 
-          {/* <NavLink
-            to="/Projects"
-            className={({ isActive }) =>
-              `navber-pages-buttons ${isActive ? "active" : ""}`
-            }
-          >
-            Projects
-          </NavLink> */}
-
-          {/*  */}
-          {/*  */}
-          {/*  */}
-
           <NavLink
             to="/Services"
             className={({ isActive }) =>
