@@ -276,3 +276,48 @@
   color: #b3a9a9;
   font-size: 1rem;
 }
+
+/*    Contact_Form    */
+/*    Contact_Form    */
+
+#contactForm-name-headline {
+  font-size: 1.5rem;
+}
+
+#contactForm-name-inputBox {
+  height: 30px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#contactForm-email-headline {
+  font-size: 1.5rem;
+}
+
+#contactForm-email-inputBox {
+  height: 30px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#contactForm-message-headline {
+  font-size: 1.5rem;
+}
+
+#contactForm-message-inputBox {
+  height: 200px;
+  width: 300px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px;
+}
+
+#contactForm-message-submit-button {
+  height: 40px;
+  width: 300px;
+  background-color: rgb(24, 24, 192);
+  border: none;
+}

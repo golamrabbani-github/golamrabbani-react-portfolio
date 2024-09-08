@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 // All CSS Files
 import "./cssFiles/contact.css";
@@ -26,6 +27,23 @@ import { faSquareFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faSquareGithub } from "@fortawesome/free-brands-svg-icons";
 
 function Contact() {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_5sw3i0o", "template_h7ky7cp", form.current, {
+        publicKey: "DCoN_9BgziKQiQ69d",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
   return (
     <div className="pb-20">
       <div className="contact-page">
@@ -311,25 +329,47 @@ function Contact() {
           </div>
         </div>
 
-        <div>{/* <i class="fa-duotone fa-phone"></i> */}</div>
+        <div>
+          <form ref={form} onSubmit={sendEmail}>
+            <label id="contactForm-name-headline">Name *</label> <br />
+            <input
+              id="contactForm-name-inputBox"
+              type="text"
+              required
+              name="name"
+              placeholder=" Your Name"
+            />
+            <br />
+            <label id="contactForm-email-headline">Gmail *</label> <br />
+            <input
+              id="contactForm-email-inputBox"
+              type="email"
+              required
+              name="email"
+              placeholder=" Your Gmail"
+            />
+            <br />
+            <label>Subject *</label> <br />
+            <input type="text" name="subject" required />
+            <br />
+            <label id="contactForm-message-headline">Message *</label> <br />
+            <textarea
+              id="contactForm-message-inputBox"
+              name="message"
+              required
+              placeholder="Write Your Message"
+            />
+            <br />
+            <input
+              id="contactForm-message-submit-button"
+              type="submit"
+              value="Send"
+            />
+          </form>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Contact;
-
-//
-//
-//
-//
-//
-//
-
-// import React from "react";
-
-// function Contact() {
-//   return <div>Contact</div>;
-// }
-
-// export default Contact;
